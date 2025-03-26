@@ -1,0 +1,13 @@
+.line-holder {
+  display: flex;
+  justify-content: center;
+  width: 475px;
+  height: 20px;
+}
+
+.line {
+  width: 100px;
+  height: 10px;
+  border-radius: 30px;
+  background: linear-gradient(to top right, #2c44fc, #8323fb);
+}

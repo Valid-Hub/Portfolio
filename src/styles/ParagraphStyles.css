@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 215px;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  font-size: 1.1rem;
+  color: #7d7d7e;
+  letter-spacing: 5px;
+  font-family: "Anta";
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25%;
+  font-size: 1rem;
+  color: white;
+  font-family: "Anta";
+  letter-spacing: 2px;
+  gap: 4px;
+  font-size: 1.8rem;
+}
+
+.content {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  width: 40%;
+  height: 40%;
+  font-size: 1rem;
+  color: #37373a;
+  font-size: 1.1rem;
+  text-align: center;
+}

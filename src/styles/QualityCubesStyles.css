@@ -1,0 +1,27 @@
+.cube-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  background: linear-gradient(to top, #2c44fc, #8323fb);
+  transform: rotate(45deg);
+}
+
+.cube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  height: 98%;
+  border-radius: 40px;
+  background-color: #121213;
+}
+
+.content {
+  transform: rotate(-45deg);
+  color: white;
+  font-size: 2rem;
+  font-family: "Anta";
+}

@@ -1,0 +1,52 @@
+.card {
+  width: 475px;
+  height: 307px;
+  background-color: #121213;
+  color: #ffffff;
+}
+
+.icon-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 475px;
+  height: 100px;
+}
+
+.icon-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(to top right, #1b1b1d, #353538);
+  border: 1px solid black;
+  color: black;
+  border-radius: 50px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+}
+
+.title {
+  width: 475px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Anta", sans-serif;
+  font-size: 2rem;
+}
+
+.content {
+  width: 475px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 5px 40px 20px 40px;
+  color: #37373a;
+}

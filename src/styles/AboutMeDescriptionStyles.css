@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70vw;
+  gap: 5vw;
+}
+
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 35%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.description {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  width: 65%;
+  color: white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  font-family: "Anta", sans-serif;
+  font-size: 2rem;
+}
+
+.content-part-1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 42.5%;
+  font-size: 1.5rem;
+}
+
+.content-part-2 {
+  display: flex;
+  align-items: top;
+  width: 100%;
+  height: 42.5%;
+  font-size: 1.5rem;
+}

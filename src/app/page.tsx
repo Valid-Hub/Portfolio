@@ -4,6 +4,8 @@ import Paragraph from "@/components/Paragraph";
 import QualityCubes from "@/components/QualityCubes";
 import ProjectCard from "@/components/ProjectCard";
 import Navbar from "@/components/Navbar";
+import AboutMeDescription from "@/components/AboutMeDescription";
+import CardSlider from "@/components/CardSlider";
 
 export default function Home() {
   const themes = {
@@ -16,14 +18,78 @@ export default function Home() {
 
   return (
     <div style={themes.flexbox}>
-      <Navbar />
+      <div></div>
     </div>
   );
 }
 
 {
   /*
+    const cardData = [
+      {
+        imageUrl: "alma.jpg",
+        title: "Project 1",
+        content: "Description for Project 1",
+        hasGithub: true,
+        githubUrl: "https://github.com/project1",
+        hasWebsite: true,
+        websiteUrl: "https://project1.com",
+      },
+      {
+        imageUrl: "alma.jpg",
+        title: "Project 2",
+        content: "Description for Project 2",
+        hasGithub: true,
+        githubUrl: "https://github.com/project2",
+        hasWebsite: false,
+      },
+      {
+        imageUrl: "alma.jpg",
+        title: "Project 3",
+        content: "Description for Project 3",
+        hasGithub: false,
+        hasWebsite: true,
+        websiteUrl: "https://project3.com",
+      },
+      {
+        imageUrl: "alma.jpg",
+        title: "Project 4",
+        content: "Description for Project 4",
+        hasGithub: true,
+        githubUrl: "https://github.com/project4",
+        hasWebsite: true,
+        websiteUrl: "https://project4.com",
+      },
+    ];
+
+    <CardSlider cards={cardData} />;
+  */
+}
+
+{
+  /*
+   <Navbar />
+  */
+}
+
+{
+  /*
     <LandingBox />
+  */
+}
+
+{
+  /*
+    <AboutMeDescription
+      props={{
+        imageUrl: "alma.jpg",
+        title: "Passionate Developer & Tech Enthusiast",
+        partOne:
+          "I am Patrik, a high school student and an aspiring full-stack developer with a strong passion for software development. With experience in Vue.js, Express.js, C#, NestJS, and MySQL, I enjoy building scalable applications and optimizing workflows.",
+        partTwo:
+          "My expertise spans across backend and frontend development, DevOps, and cloud-based deployments. I have worked on projects ranging from admin dashboards to reservation systems, always aiming for efficiency and great user experience.",
+      }}
+    />
   */
 }
 

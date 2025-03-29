@@ -7,15 +7,9 @@ import Navbar from "@/components/Navbar";
 import AboutMeDescription from "@/components/AboutMeDescription";
 import CardSlider from "@/components/CardSlider";
 
-export default function Home() {
-  const themes = {
-    flexbox: {
-      marginTop: "100px",
-      display: "flex",
-      justifyContent: "space-evenly",
-    },
-  };
+import "@/styles/HomeStyles.css";
 
+export default function Home() {
   const cardData = [
     {
       imageUrl: "alma.jpg",
@@ -54,8 +48,9 @@ export default function Home() {
   ];
 
   return (
-    <div style={themes.flexbox}>
+    <div className="flexbox">
       <div></div>
+      <Navbar />
     </div>
   );
 }

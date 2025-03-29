@@ -11,7 +11,7 @@ export default function ProjectCard({ props }) {
           <img src={props.imageUrl} className="img" />
         </div>
         <div className="content-area">
-          <div className="title">{props.title}</div>
+          <div className="title"><b>{props.title}</b></div>
           <div className="content">{props.content}</div>
           <div className="accessibilities">
             {props.hasGithub && (

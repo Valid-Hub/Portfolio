@@ -12,9 +12,46 @@ export default function Home() {
     flexbox: {
       marginTop: "100px",
       display: "flex",
-      justifyContent: "space-around",
+      justifyContent: "space-evenly",
     },
   };
+
+  const cardData = [
+    {
+      imageUrl: "alma.jpg",
+      title: "Project 1",
+      content: "Description for Project 1",
+      hasGithub: true,
+      githubUrl: "https://github.com/project1",
+      hasWebsite: true,
+      websiteUrl: "https://project1.com",
+    },
+    {
+      imageUrl: "alma.jpg",
+      title: "Project 2",
+      content: "Description for Project 2",
+      hasGithub: true,
+      githubUrl: "https://github.com/project2",
+      hasWebsite: false,
+    },
+    {
+      imageUrl: "alma.jpg",
+      title: "Project 3",
+      content: "Description for Project 3",
+      hasGithub: false,
+      hasWebsite: true,
+      websiteUrl: "https://project3.com",
+    },
+    {
+      imageUrl: "alma.jpg",
+      title: "Project 4",
+      content: "Description for Project 4",
+      hasGithub: true,
+      githubUrl: "https://github.com/project4",
+      hasWebsite: true,
+      websiteUrl: "https://project4.com",
+    },
+  ];
 
   return (
     <div style={themes.flexbox}>

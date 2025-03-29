@@ -15,13 +15,11 @@ export default function SpecialityCard({ props }) {
 
   return (
     <div className="card">
-      <div className="iconHeader">
-        <div className="iconHolder">
+      <div className="icon-header">
           <Icon path={iconPath} className="icon" />
-        </div>
       </div>
       <DecorationLine />
-      <div className="title">{props.title}</div>
+      <div className="title"><b>{props.title}</b></div>
       <div className="content">{props.content}</div>
     </div>
   );

@@ -6,7 +6,7 @@ export default function Paragraph({ props }) {
       <div className="category">{props.category}</div>
       <div className="title">
         <p>{props.titleFirstWord}</p>
-        <p style={{ color: "#194BFD" }}>{props.titleSecondWord}</p>
+        <p>{props.titleSecondWord}</p>
       </div>
       <div className="content">{props.content}</div>
     </div>

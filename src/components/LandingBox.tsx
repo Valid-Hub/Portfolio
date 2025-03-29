@@ -4,7 +4,7 @@ export default function LandingBox() {
   return (
     <div className="box">
       <div className="left">
-        <div className="title">Jani Patrik</div>
+        <div className="title"><b>Jani Patrik</b></div>
         <div className="content">
           A passionate and dedicated software developer with experience in
           full-stack development, DevOps, and GitHub project management. I enjoy

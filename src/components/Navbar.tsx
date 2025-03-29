@@ -3,7 +3,7 @@ import "@/styles/NavbarStyles.css";
 export default function Navbar() {
   return (
     <div className="bar">
-      <div className="container">
+      <div className="holder">
         <a href="">Home</a>
         <a href="">Specialities</a>
         <a href="">About</a>

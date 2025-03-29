@@ -8,7 +8,7 @@
   transform: rotate(45deg);
 }
 
-.cube {
+.cube-wrapper .cube {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   border: solid 2px #222226
 }
 
-.content {
+.cube-wrapper .content {
   transform: rotate(-45deg);
   color: white;
   font-size: 2rem;

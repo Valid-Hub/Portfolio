@@ -2,7 +2,7 @@ import "@/styles/AboutMeDescriptionStyles.css";
 
 export default function AboutMeDescription({ props }) {
   return (
-    <div className="container">
+    <div className="about-holder">
       <div className="wrapper">
         <div className="picture">
           <img src={props.imageUrl} className="img" />

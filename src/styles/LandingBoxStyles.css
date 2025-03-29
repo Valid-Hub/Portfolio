@@ -1,7 +1,10 @@
 .box {
   display: flex;
   justify-content: space-between;
-  background: #121213;
+  background-color: rgba(18, 18, 19, 0.7);
+  backdrop-filter: blur(10px);
+  border: solid 2px #222226;
+  border-radius: 20px;
   width: 80vw;
   height: 50vh;
 }

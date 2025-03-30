@@ -1,3 +1,6 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 import SpecialityCard from "@/components/SpecialityCard";
 import LandingBox from "@/components/LandingBox";
 import Paragraph from "@/components/Paragraph";
@@ -47,8 +50,29 @@ export default function Home() {
     },
   ];
 
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updatePosition = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", updatePosition);
+    return () => window.removeEventListener("mousemove", updatePosition);
+  }, []);
+
   return (
     <div className="page-holder">
+      <div className="blur-layer"></div>
+
+      <div
+        className="mouse-glow-button"
+        style={{
+          left: position.x,
+          top: position.y,
+        }}
+      />
+
       <div className="navbar">
         <Navbar />
       </div>
@@ -57,7 +81,8 @@ export default function Home() {
         <LandingBox />
       </div>
 
-      <Paragraph
+        <div className="paragraph-holder">
+        <Paragraph
       props={{
         category: "SPECIALITY",
         titleFirstWord: "My",
@@ -66,6 +91,7 @@ export default function Home() {
           "I specialize in developing efficient and scalable applications using modern technologies. My expertise spans across backend and frontend development.",
       }}
       />
+        </div>
 
       <div className="specialities">
         <SpecialityCard props={{ iconName : "github", title: "Github manager", content: "Proficient in managing repositories, and collaborating with teams to maintain efficient codebases." }} />
@@ -73,7 +99,8 @@ export default function Home() {
         <SpecialityCard props={{ iconName : "home", title: "DevOps Enthusiast", content: "Beginner in automating workflows and deploying applications to ensure efficient operations." }} />
       </div>
 
-      <Paragraph
+<div className="paragraph-holder">
+<Paragraph 
         props={{
           category: "ABOUT ME",
           titleFirstWord: "Key",
@@ -82,6 +109,8 @@ export default function Home() {
             "I enjoy crafting clean and maintainable code while solving complex problems. My focus is on building intuitive and high-performance applications.",
         }}
       />
+
+</div>
 
       <div className="about">
         <div className="about-qualities">
@@ -113,6 +142,7 @@ export default function Home() {
 
       <div className="projects"></div>
       <div className="contact"></div>
+
     </div>
   );
 }

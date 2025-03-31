@@ -77,6 +77,7 @@
   flex-wrap: wrap;
   width: 100%;
   gap: 5vw;
+  padding: 20px;
 }
 
 .about {
@@ -118,6 +119,30 @@
 
 .projects {
   z-index: 1;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.screen .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  font-size: 2rem;
+  background-color: rgba(18, 18, 19, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  font-family: "Anta";
+  padding: 30px;
 }
 
 @media (max-width: 768px) {

@@ -1,66 +1,80 @@
 .about-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 70vw;
-    gap: 5vw;
+.about-holder .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70vw;
+  gap: 5vw;
 }
 
-.picture {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 35%;
+.about-holder .wrapper .picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 35%;
 }
 
-.img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.about-holder .wrapper .picture .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.description {
-    display: flex;
-    justify-content: left;
+.about-holder .wrapper .description {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  width: 65%;
+  color: #7d7d7e;
+}
+
+.about-holder .wrapper .description .title {
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  font-family: "Anta", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.about-holder .wrapper .description .content-part-1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 42.5%;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.about-holder .wrapper .description .content-part-2 {
+  display: flex;
+  align-items: top;
+  width: 100%;
+  height: 42.5%;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+@media (max-width: 1265px) {
+  .about-holder .wrapper {
     flex-direction: column;
-    text-align: left;
-    height: 100%;
-    width: 65%;
-    color: #7d7d7e;
-}
+    width: 90vw;
+  }
 
-.title {
-    color: white;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 25%;
-    font-family: 'Anta', sans-serif;
-    font-size: 2rem;
-}
+  .about-holder .wrapper .description {
+    width: 80%;
+  }
 
-.content-part-1 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 42.5%;
-    font-size: 1.5rem;
-}
-
-.content-part-2 {
-    display: flex;
-    align-items: top;
-    width: 100%;
-    height: 42.5%;
-    font-size: 1.5rem;
+  .about-holder .wrapper .picture {
+    width: 80%;
+  }
 }

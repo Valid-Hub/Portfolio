@@ -18,7 +18,7 @@ export default function CardSlider({ cards }) {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
   };
 
-  const handlePrev = () => {    
+  const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + cards.length) % cards.length
     );

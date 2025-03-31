@@ -10,6 +10,7 @@
   border-radius: 20px;
   border: solid 2px #222226;
   padding: 15px 0;
+  transition: max-height 0.5s ease-out;
 }
 
 .bar .holder {

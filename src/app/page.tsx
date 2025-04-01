@@ -175,7 +175,7 @@ export default function Home() {
                     </div>
 
                     <div className="projects">
-                        <CardSlider cards={cardData} />;
+                        <CardSlider cards={cardData} />
                     </div>
                     <div className="contact"></div>
                 </div>

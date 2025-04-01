@@ -1,80 +1,107 @@
 .about-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .about-holder .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 70vw;
-  gap: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70vw;
+    gap: 5vw;
 }
 
 .about-holder .wrapper .picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 35%;
 }
 
 .about-holder .wrapper .picture .img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-holder .wrapper .description {
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  text-align: left;
-  height: 100%;
-  width: 65%;
-  color: #7d7d7e;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+    height: 100%;
+    width: 65%;
+    color: #7d7d7e;
 }
 
 .about-holder .wrapper .description .title {
-  color: white;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 25%;
-  font-family: "Anta", sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    font-family: 'Anta', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 30px;
 }
 
 .about-holder .wrapper .description .content-part-1 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 42.5%;
-  font-size: clamp(1rem, 3vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 42.5%;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 20px;
 }
 
 .about-holder .wrapper .description .content-part-2 {
-  display: flex;
-  align-items: top;
-  width: 100%;
-  height: 42.5%;
-  font-size: clamp(1rem, 3vw, 1.5rem);
+    display: flex;
+    align-items: top;
+    width: 100%;
+    height: 42.5%;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.picture .profile-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 16px;
+}
+
+.picture .profile-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 125%;
+    background-color: #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.picture .profile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 1265px) {
-  .about-holder .wrapper {
-    flex-direction: column;
-    width: 90vw;
-  }
+    .about-holder .wrapper {
+        flex-direction: column;
+        width: 90vw;
+    }
 
-  .about-holder .wrapper .description {
-    width: 80%;
-  }
+    .about-holder .wrapper .description {
+        width: 80%;
+    }
 
-  .about-holder .wrapper .picture {
-    width: 80%;
-  }
+    .about-holder .wrapper .picture {
+        width: 80%;
+    }
 }

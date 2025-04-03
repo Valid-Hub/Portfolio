@@ -25,11 +25,11 @@ export default function Navbar() {
             <div className="holder">
                 {isLargeEnough ? (
                     <div className="monitor">
-                        <a href="">Home</a>
-                        <a href="">Specialities</a>
-                        <a href="">About</a>
-                        <a href="">Projects</a>
-                        <a href="">Contact</a>
+                        <a href="#home">Home</a>
+                        <a href="#specialities">Specialities</a>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 ) : (
                     <div className="mobile-open">
@@ -41,11 +41,46 @@ export default function Navbar() {
                         </div>
                         <div className={`menu-items ${isOpen ? 'open' : ''}`}>
                             <div className="line"></div>
-                            <a href="">Home</a>
-                            <a href="">Specialities</a>
-                            <a href="">About</a>
-                            <a href="">Projects</a>
-                            <a href="">Contact</a>
+                            <a
+                                href="#home"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                Home
+                            </a>
+                            <a
+                                href="#specialities"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                Specialities
+                            </a>
+                            <a
+                                href="#about"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                About
+                            </a>
+                            <a
+                                href="#projects"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                Projects
+                            </a>
+                            <a
+                                href="#contact"
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                Contact
+                            </a>
                         </div>
                     </div>
                 )}

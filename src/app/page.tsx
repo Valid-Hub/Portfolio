@@ -9,6 +9,7 @@ import ProjectCard from '@/components/ProjectCard';
 import Navbar from '@/components/Navbar';
 import AboutMeDescription from '@/components/AboutMeDescription';
 import CardSlider from '@/components/CardSlider';
+import Contact from '@/components/Contact';
 
 import '@/styles/HomeStyles.css';
 
@@ -94,11 +95,11 @@ export default function Home() {
                         <Navbar />
                     </div>
 
-                    <div className="home">
+                    <div className="home" id="home">
                         <LandingBox />
                     </div>
 
-                    <div className="paragraph-holder">
+                    <div className="paragraph-holder" id="specialities">
                         <Paragraph
                             props={{
                                 category: 'SPECIALITY',
@@ -134,7 +135,7 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="paragraph-holder">
+                    <div className="paragraph-holder" id="about">
                         <Paragraph
                             props={{
                                 category: 'ABOUT ME',
@@ -174,7 +175,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="paragraph-holder">
+                    <div className="paragraph-holder" id="projects">
                         <Paragraph
                             props={{
                                 category: 'PROJECTS',
@@ -190,7 +191,7 @@ export default function Home() {
                         <CardSlider cards={cardData} />
                     </div>
 
-                    <div className="paragraph-holder">
+                    <div className="paragraph-holder" id="contact">
                         <Paragraph
                             props={{
                                 category: 'CONTACT',
@@ -202,7 +203,9 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="contact"></div>
+                    <div className="contact">
+                        <Contact />
+                    </div>
                 </div>
             )}
 

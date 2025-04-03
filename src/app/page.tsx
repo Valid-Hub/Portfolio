@@ -174,9 +174,34 @@ export default function Home() {
                         </div>
                     </div>
 
+                    <div className="paragraph-holder">
+                        <Paragraph
+                            props={{
+                                category: 'PROJECTS',
+                                titleFirstWord: 'Personal',
+                                titleSecondWord: 'Projects',
+                                content:
+                                    'I work on personal projects that allow me to explore new technologies and solve real-world problems. I focus on building efficient, scalable solutions with clean, maintainable code.',
+                            }}
+                        />
+                    </div>
+
                     <div className="projects">
                         <CardSlider cards={cardData} />
                     </div>
+
+                    <div className="paragraph-holder">
+                        <Paragraph
+                            props={{
+                                category: 'CONTACT',
+                                titleFirstWord: 'Contact',
+                                titleSecondWord: 'Information',
+                                content:
+                                    'These are my personal contact details. I am always open to new opportunities and collaborations. Feel free to reach out!',
+                            }}
+                        />
+                    </div>
+
                     <div className="contact"></div>
                 </div>
             )}

@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    font-family: 'Anta', sans-serif;
+    font-family: var(--font-anta);
     color: white;
     font-size: clamp(2rem, 3vw, 4rem);
     padding: 10px 0 0px 60px;
@@ -54,7 +54,7 @@
     border: 2px solid #28292c;
     color: #7d7d7e;
     font-size: clamp(1rem, 2.6vw, 2.5rem);
-    font-family: 'Anta', sans-serif;
+    font-family: var(--font-anta);
     max-width: 400px;
     max-height: 100px;
     width: 100%;

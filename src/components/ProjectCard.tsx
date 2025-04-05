@@ -2,7 +2,15 @@ import '@/styles/ProjectCardStyles.css';
 import Icon from '@mdi/react';
 import { mdiGithub, mdiGoogleChrome } from '@mdi/js';
 
-export default function ProjectCard({ props }) {
+export default function ProjectCard(props: {
+    imageUrl: string;
+    title: string;
+    content: string;
+    hasGithub: boolean;
+    githubUrl?: string;
+    hasWebsite: boolean;
+    websiteUrl?: string;
+}) {
     return (
         <div className="card-wrapper">
             <div className="card">

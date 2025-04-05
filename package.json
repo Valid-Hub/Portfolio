@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev -p 5555 --turbopack",
+        "dev": "next dev -p 4444 --turbopack",
         "build": "next build",
-        "start": "next start -p 5555",
-        "lint": "next lint -p 5555"
+        "start": "next start -p 4444",
+        "lint": "next lint -p 4444"
     },
     "dependencies": {
         "@mdi/js": "^7.4.47",

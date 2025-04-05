@@ -3,7 +3,17 @@ import { useState, useEffect } from 'react';
 import '@/styles/CardSliderStyles.css';
 import ProjectCard from './ProjectCard';
 
-export default function CardSlider({ cards }) {
+interface Card {
+    imageUrl: string;
+    title: string;
+    content: string;
+    hasGithub: boolean;
+    githubUrl?: string;
+    hasWebsite: boolean;
+    websiteUrl?: string;
+}
+
+export default function CardSlider({ cards }: { cards: Card[] }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [cardsToShow, setCardsToShow] = useState(3);
 
@@ -46,7 +56,7 @@ export default function CardSlider({ cards }) {
             </button>
             <div className="card-container">
                 {getVisibleCards().map((card, index) => (
-                    <ProjectCard key={index} props={card} />
+                    <ProjectCard key={index} {...card} />
                 ))}
             </div>
             <button className="nav-button" onClick={handleNext}>

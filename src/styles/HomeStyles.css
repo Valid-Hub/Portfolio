@@ -140,7 +140,7 @@
     background-color: rgba(18, 18, 19, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    font-family: 'Anta';
+    font-family: var(--font-anta);
     padding: 30px;
 }
 

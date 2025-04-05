@@ -1,47 +1,47 @@
 .paragraph-holder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 215px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 215px;
 }
 
 .paragraph-holder .category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 15%;
-  font-size: clamp(0.8rem, 3vw, 1.1rem);
-  color: #7d7d7e;
-  letter-spacing: 5px;
-  font-family: "Anta";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    color: #7d7d7e;
+    letter-spacing: 5px;
+    font-family: var(--font-anta);
 }
 
 .paragraph-holder .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 25%;
-  font-size: 1rem;
-  color: white;
-  font-family: "Anta";
-  letter-spacing: 2px;
-  gap: 4px;
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    font-size: 1rem;
+    color: white;
+    font-family: var(--font-anta);
+    letter-spacing: 2px;
+    gap: 4px;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
 }
 
 .paragraph-holder .content {
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  width: 40%;
-  height: 40%;
-  font-size: 1rem;
-  color: #37373a;
-  font-size: clamp(0.8rem, 3vw, 1.1rem);
-  text-align: center;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    width: 40%;
+    height: 40%;
+    font-size: 1rem;
+    color: #37373a;
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    text-align: center;
 }

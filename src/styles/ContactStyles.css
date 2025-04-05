@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    font-family: 'Anta', sans-serif;
+    font-family: var(--font-anta);
     color: white;
     font-size: clamp(1.3rem, 3vw, 4rem);
     padding: 10px 0 0px 0px;

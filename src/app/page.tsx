@@ -54,7 +54,7 @@ export default function Home() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        const updatePosition = (e) => {
+        const updatePosition = (e: MouseEvent) => {
             setPosition({ x: e.clientX, y: e.clientY });
         };
 
@@ -101,89 +101,70 @@ export default function Home() {
 
                     <div className="paragraph-holder" id="specialities">
                         <Paragraph
-                            props={{
-                                category: 'SPECIALITY',
-                                titleFirstWord: 'My',
-                                titleSecondWord: 'Specialities',
-                                content:
-                                    'I specialize in developing efficient and scalable applications using modern technologies. My expertise spans across backend and frontend development.',
-                            }}
+                            category="SPECIALITY"
+                            titleFirstWord="My"
+                            titleSecondWord="Specialities"
+                            content="I specialize in developing efficient and scalable applications using modern technologies. My expertise spans across backend and frontend development."
                         />
                     </div>
 
                     <div className="specialities">
                         <SpecialityCard
-                            props={{
-                                iconName: 'github',
-                                title: 'Github manager',
-                                content: 'Proficient in managing repositories, and collaborating with teams to maintain efficient codebases.',
-                            }}
+                            iconName="github"
+                            title="Github manager"
+                            content="Proficient in managing repositories, and collaborating with teams to maintain efficient codebases."
                         />
                         <SpecialityCard
-                            props={{
-                                iconName: 'settings',
-                                title: 'Fullstack Developer',
-                                content: 'Skilled in both frontend and backend development, creating seamless user experiences.',
-                            }}
+                            iconName="settings"
+                            title="Fullstack Developer"
+                            content="Skilled in both frontend and backend development, creating seamless user experiences."
                         />
                         <SpecialityCard
-                            props={{
-                                iconName: 'home',
-                                title: 'DevOps Enthusiast',
-                                content: 'Beginner in automating workflows and deploying applications to ensure efficient operations.',
-                            }}
+                            iconName="home"
+                            title="DevOps Enthusiast"
+                            content="Beginner in automating workflows and deploying applications to ensure efficient operations."
                         />
                     </div>
 
                     <div className="paragraph-holder" id="about">
                         <Paragraph
-                            props={{
-                                category: 'ABOUT ME',
-                                titleFirstWord: 'Key',
-                                titleSecondWord: 'Qualities',
-                                content:
-                                    'I enjoy crafting clean and maintainable code while solving complex problems. My focus is on building intuitive and high-performance applications.',
-                            }}
+                            category="ABOUT ME"
+                            titleFirstWord="Key"
+                            titleSecondWord="Qualities"
+                            content="I enjoy crafting clean and maintainable code while solving complex problems. My focus is on building intuitive and high-performance applications."
                         />
                     </div>
 
                     <div className="about">
                         <div className="about-qualities">
                             <div className="first-line">
-                                <QualityCubes props={{ content: 'Creative' }} />
-                                <QualityCubes props={{ content: 'Logical' }} />
-                                <QualityCubes props={{ content: 'Focused' }} />
-                                <QualityCubes props={{ content: 'Precise' }} />
+                                <QualityCubes content="Creative" />
+                                <QualityCubes content="Logical" />
+                                <QualityCubes content="Focused" />
+                                <QualityCubes content="Precise" />
                             </div>
                             <div className="second-line">
-                                <QualityCubes props={{ content: 'Efficient' }} />
-                                <QualityCubes props={{ content: 'Innovative' }} />
-                                <QualityCubes props={{ content: 'Reliable' }} />
+                                <QualityCubes content="Efficient" />
+                                <QualityCubes content="Innovative" />
+                                <QualityCubes content="Reliable" />
                             </div>
                         </div>
                         <div className="about-description">
                             <AboutMeDescription
-                                props={{
-                                    imageUrl: 'alma.jpg',
-                                    title: 'Passionate Developer & Tech Enthusiast',
-                                    partOne:
-                                        'I am Patrik, a high school student and an aspiring full-stack developer with a strong passion for software development. With experience in Vue.js, Express.js, C#, NestJS, and MySQL, I enjoy building scalable applications and optimizing workflows.',
-                                    partTwo:
-                                        'My expertise spans across backend and frontend development, DevOps, and cloud-based deployments. I have worked on projects ranging from admin dashboards to reservation systems, always aiming for efficiency and great user experience.',
-                                }}
+                                imageUrl="alma.jpg"
+                                title="Passionate Developer & Tech Enthusiast"
+                                partOne="I am Patrik, a high school student and an aspiring full-stack developer with a strong passion for software development. With experience in Vue.js, Express.js, C#, NestJS, and MySQL, I enjoy building scalable applications and optimizing workflows."
+                                partTwo="My expertise spans across backend and frontend development, DevOps, and cloud-based deployments. I have worked on projects ranging from admin dashboards to reservation systems, always aiming for efficiency and great user experience."
                             />
                         </div>
                     </div>
 
                     <div className="paragraph-holder" id="projects">
                         <Paragraph
-                            props={{
-                                category: 'PROJECTS',
-                                titleFirstWord: 'Personal',
-                                titleSecondWord: 'Projects',
-                                content:
-                                    'I work on personal projects that allow me to explore new technologies and solve real-world problems. I focus on building efficient, scalable solutions with clean, maintainable code.',
-                            }}
+                            category="PROJECTS"
+                            titleFirstWord="Personal"
+                            titleSecondWord="Projects"
+                            content="I work on personal projects that allow me to explore new technologies and solve real-world problems. I focus on building efficient, scalable solutions with clean, maintainable code."
                         />
                     </div>
 
@@ -193,13 +174,10 @@ export default function Home() {
 
                     <div className="paragraph-holder" id="contact">
                         <Paragraph
-                            props={{
-                                category: 'CONTACT',
-                                titleFirstWord: 'Contact',
-                                titleSecondWord: 'Information',
-                                content:
-                                    'These are my personal contact details. I am always open to new opportunities and collaborations. Feel free to reach out!',
-                            }}
+                            category="CONTACT"
+                            titleFirstWord="Contact"
+                            titleSecondWord="Information"
+                            content="These are my personal contact details. I am always open to new opportunities and collaborations. Feel free to reach out!"
                         />
                     </div>
 
@@ -216,120 +194,4 @@ export default function Home() {
             )}
         </div>
     );
-}
-
-{
-    /*
-    const cardData = [
-      {
-        imageUrl: "alma.jpg",
-        title: "Project 1",
-        content: "Description for Project 1",
-        hasGithub: true,
-        githubUrl: "https://github.com/project1",
-        hasWebsite: true,
-        websiteUrl: "https://project1.com",
-      },
-      {
-        imageUrl: "alma.jpg",
-        title: "Project 2",
-        content: "Description for Project 2",
-        hasGithub: true,
-        githubUrl: "https://github.com/project2",
-        hasWebsite: false,
-      },
-      {
-        imageUrl: "alma.jpg",
-        title: "Project 3",
-        content: "Description for Project 3",
-        hasGithub: false,
-        hasWebsite: true,
-        websiteUrl: "https://project3.com",
-      },
-      {
-        imageUrl: "alma.jpg",
-        title: "Project 4",
-        content: "Description for Project 4",
-        hasGithub: true,
-        githubUrl: "https://github.com/project4",
-        hasWebsite: true,
-        websiteUrl: "https://project4.com",
-      },
-    ];
-
-    <CardSlider cards={cardData} />;
-  */
-}
-
-{
-    /*
-   <Navbar />
-  */
-}
-
-{
-    /*
-    <LandingBox />
-  */
-}
-
-{
-    /*
-    <AboutMeDescription
-      props={{
-        imageUrl: "alma.jpg",
-        title: "Passionate Developer & Tech Enthusiast",
-        partOne:
-          "I am Patrik, a high school student and an aspiring full-stack developer with a strong passion for software development. With experience in Vue.js, Express.js, C#, NestJS, and MySQL, I enjoy building scalable applications and optimizing workflows.",
-        partTwo:
-          "My expertise spans across backend and frontend development, DevOps, and cloud-based deployments. I have worked on projects ranging from admin dashboards to reservation systems, always aiming for efficiency and great user experience.",
-      }}
-    />
-  */
-}
-
-{
-    /*
-    <ProjectCard
-      props={{
-        imageUrl: "alma.jpg",
-        hasGithub: true,
-        hasWebsite: true,
-        githubUrl: "https://www.w3schools.com/css/css3_flexbox_container.asp",
-        websiteUrl:
-          "https://www.w3schools.com/css/css3_flexbox_container.asp",
-        title: "Pollák Csengő",
-        content:
-          "My expertise spans across backend and frontend development, ns across backend and frontend deve DevOps, and cloud-based deployments. I have worked on projects ranging from admin dashboards to reservation systems, always aiming for efficiency and great user experience.",
-      }}
-    />
-  */
-}
-
-{
-    /*
-    <QualityCubes props={{ content: "Creative" }} />
-  */
-}
-
-{
-    /*
-    <Paragraph
-      props={{
-        category: "SPECIALITY",
-        titleFirstWord: "My",
-        titleSecondWord: "Specialities",
-        content:
-          "I specialize in developing efficient and scalable applications using modern technologies. My expertise spans across backend and frontend development.",
-      }}
-    />
-  */
-}
-
-{
-    /*
-  <SpecialityCard props={{ iconName : "github", title: "Github manager", content: "Proficient in managing repositories, and collaborating with teams to maintain efficient codebases." }} />
-  <SpecialityCard props={{ iconName : "settings", title: "Fullstack Developer", content: "Skilled in both frontend and backend development, creating seamless user experiences." }} />
-  <SpecialityCard props={{ iconName : "home", title: "DevOps Enthusiast", content: "Beginner in automating workflows and deploying applications to ensure efficient operations." }} />
-  */
 }

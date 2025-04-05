@@ -1,6 +1,6 @@
 import '@/styles/AboutMeDescriptionStyles.css';
 
-export default function AboutMeDescription({ props }) {
+export default function AboutMeDescription(props: { title: string; partOne: string; partTwo: string; imageUrl: string }) {
     return (
         <div className="about-holder">
             <div className="wrapper">

@@ -27,7 +27,7 @@
     height: 100%;
     width: 70%;
     font-size: clamp(1rem, 1.5vw, 2rem);
-    font-family: 'Anta';
+    font-family: var(--font-anta);
     gap: 10px;
 }
 
@@ -43,7 +43,7 @@
     width: 90%;
     display: flex;
     font-size: clamp(1rem, 1.5vw, 2rem);
-    font-family: 'Anta';
+    font-family: var(--font-anta);
     flex-direction: column;
 }
 

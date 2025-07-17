@@ -1,9 +1,0 @@
-services:
-    nextjs-app:
-        container_name: discord-bot-frontend
-        build:
-            context: .
-            dockerfile: Dockerfile
-        ports:
-            - '4444:4444'
-        restart: always

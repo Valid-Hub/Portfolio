@@ -1,0 +1,10 @@
+.popupContainer {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    width: 320px;
+}

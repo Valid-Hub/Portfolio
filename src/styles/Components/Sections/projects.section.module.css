@@ -349,11 +349,18 @@
         align-items: center;
     }
 
+    .projectsSection {
+        padding: 0px;
+    }
+
     .carouselContainer {
         width: 100%;
     }
 
-    .experienceColumn,
+    .experienceColumn {
+        width: 90%;
+    }
+
     .projectsColumn {
         width: 100%;
         min-width: auto;

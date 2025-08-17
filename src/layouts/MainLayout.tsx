@@ -1,7 +1,7 @@
 import NotCompatible from '../pages/NotCompatible';
 import { Outlet } from 'react-router-dom';
 import styles from '../styles/Layouts/main.layout.module.css';
-import Footer from '../components/Layouts/Footer';
+// import Footer from '../components/Layouts/Footer';
 import Navbar from '../components/Layouts/Navbar';
 import { useCompatibility } from '../hooks/useCompability';
 
@@ -18,9 +18,9 @@ const MainLayout = () => {
                 <Navbar />
             </nav>
             <Outlet />
-            <footer>
+            {/* <footer>
                 <Footer />
-            </footer>
+            </footer> */}
         </div>
     );
 };

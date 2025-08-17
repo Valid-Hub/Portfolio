@@ -1,5 +1,124 @@
 {
-    "common": {
-        "name": "Common Name"
+    "layouts": {
+        "mainLayout": {
+            "navbar": {
+                "links": {
+                    "home": "Kezdőlap",
+                    "skills": "Rólam",
+                    "projects": "Projektek",
+                    "contact": "Kapcsolat"
+                }
+            }
+        }
+    },
+    "sections": {
+        "hero": {
+            "title": "Jani Patrik",
+            "subtitle": "Egy Junior Full Stack szoftverfejlesztő, aki szenvedélyesen szeret alkotni, és készül nevet szerezni magának.",
+            "getInTouch": "Lépj kapcsolatba",
+            "downloadCV": "Önéletrajz letöltése",
+            "typewriter": ["Weboldalakat építek", "Backendet fejlesztek", "Imádom az új technológiákat", "Mindig tanulok valami újat"]
+        },
+        "projects": {
+            "title": "Projektek & Tapasztalatok",
+            "paragraphs": [
+                "Tanulmányaim és személyes kezdeményezéseim során számos projektet valósítottam meg, amelyek során lehetőségem nyílt különböző frontend és backend technológiák alkalmazására. Legyen szó weboldalakról, admin felületekről vagy kisebb játékokról – mindig arra törekedtem, hogy stabil, átlátható és jól strukturált megoldásokat készítsek.",
+                "A legtöbb projekt csapatban valósult meg, ahol fontos szerepet játszott a közös tervezés, a feladatok szétosztása és a rendszeres kommunikáció. Ezek a tapasztalatok segítettek fejleszteni az együttműködési készségeimet és megtanítottak hatékonyan kezelni a különböző nézőpontokat.",
+                "Minden kihívás lehetőséget adott a fejlődésre – akár új technológiák elsajátításáról, akár meglévő tudásom mélyítéséről volt szó. Hiszek abban, hogy a folyamatos tanulás és a nyitottság visz előre, különösen egy olyan gyorsan változó területen, mint a szoftverfejlesztés."
+            ],
+            "buttons": {
+                "live": "Élő verzió",
+                "next": "Következő",
+                "previous": "Előző"
+            }
+        },
+        "roadmap": {
+            "title": "Rólam",
+            "paragraphs": [
+                "Szia! Szenvedélyes full-stack fejlesztő vagyok, aki imád innovatív webes megoldásokat létrehozni. A programozásban tett utazásom 2019-ben kezdődött, és azóta folyamatosan tanulok és fejlődök ebben az izgalmas területen.",
+                "A modern webes technológiákra specializálódtam, mint például a React, a Node.js és az adatbázis-kezelés. Mindig izgatottan vállalok új kihívásokat, és szeretek érdekes projekteken együttműködni, amelyek valódi hatással bírnak."
+            ],
+            "subtitle": "Történetem",
+            "experiences": [
+                {
+                    "side": "left",
+                    "title": "Programozás elkezdése",
+                    "content": [
+                        "Elkezdtem megtanulni a programozás alapjait, és elkészítettem az első alkalmazásomat — egy egyszerű C# számológépet egy videó alapján.",
+                        "Ez a kis projekt segített igazán megérteni, hogyan működik a programozás, például a változók használatát és számítások elvégzését."
+                    ],
+                    "date": "2019"
+                },
+                {
+                    "side": "right",
+                    "title": "Első év a gimnáziumban",
+                    "content": [
+                        "Sikeresen elkezdtem az első évemet a gimnáziumban, ahol komolyabban kezdtem el tanulni a programozást, nem csak hobbiként.",
+                        "Felfedeztem az alapvető szerkezeteket, mint az osztályok, ciklusok, függvények és scope-ok. Akkoriban főként Python-ban dolgoztam, ami elég frusztráló volt — és a mai napig nem élvezem igazán. :D"
+                    ],
+                    "date": "2020"
+                },
+                {
+                    "side": "left",
+                    "title": "Ágazati alapvizsga",
+                    "content": [
+                        "Kiváló eredménnyel teljesítettem az ágazati alapvizsgát, 99%-ot értem el.",
+                        "Keményen készültem a vizsgára, de 1%-ot elvesztettem az interaktív részen néhány hibás válasz miatt. Szerencsére a gyakorlati részen tökéletes pontszámot értem el, ami megérte a fáradozást."
+                    ],
+                    "date": "2021"
+                },
+                {
+                    "side": "right",
+                    "title": "Prograce részvétel",
+                    "content": [
+                        "A Prograce országos programozóverseny, amelyet Pécsen rendeznek, és szerencsés voltam, hogy részt vehettem.",
+                        "Ez volt az első igazi programozóversenyem, ahol sok tehetséges diákot találkoztam más gimnáziumokból és egyetemekről.",
+                        "A kihívás Scratch-ben volt, ami szórakoztató kezdést biztosított. Bár nem kerültünk a dobogóra, az élmény felbecsülhetetlen volt."
+                    ],
+                    "date": "2022"
+                },
+                {
+                    "side": "left",
+                    "title": "Visszatérés a Prograce-re",
+                    "content": [
+                        "Két évvel később visszatértem a Prograce-re, ismét Pécsen, de ezúttal sokkal komolyabb volt a verseny hangulata.",
+                        "Kb. 100 résztvevő volt, köztük egyetemisták, és az esemény egész nap tartott.",
+                        "A kihívás Java-ban volt — először dolgoztam a nyelvvel. A meredek tanulási görbe ellenére a csapatunk ötödik helyezést ért el, ami hatalmas siker volt."
+                    ],
+                    "date": "2024"
+                },
+                {
+                    "side": "right",
+                    "title": "Pollák Csengő",
+                    "content": [
+                        "Az utolsó évemben a szakdolgozati projektemen két társsal dolgoztam. Pollak Bell-nek neveztük el.",
+                        "Ez egy full-stack webalkalmazás volt, Vue frontenddel és TypeScript-ben írt NestJS backenddel. Adatbáziskezeléshez PostgreSQL-t használtunk Docker és Docker Compose konténeres eszközökkel.",
+                        "Az alkalmazást az iskolánk több mint 100 diákja használta, ez volt az első nagyobb, éles projekt, amin dolgoztam."
+                    ],
+                    "date": "2025"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Lépjünk kapcsolatba és dolgozzunk együtt!",
+            "subtitle": "Akár van egy projektötleted, kérdésed, vagy csak beszélgetnél, nyugodtan vedd fel velem a kapcsolatot az alábbi módok egyikén.",
+            "form": {
+                "title": "Kapcsolat felvétel",
+                "nameLabel": "Név:",
+                "namePlaceholder": "Teljes neved",
+                "emailLabel": "E-mail cím:",
+                "emailPlaceholder": "neved@pelda.com",
+                "subjectLabel": "Tárgy:",
+                "subjectPlaceholder": "Üzenet tárgya",
+                "messageLabel": "Üzenet:",
+                "messagePlaceholder": "Ide írhatod üzeneted...",
+                "submitButton": "Üzenet küldése",
+                "submissionSuccess": "Üzeneted sikeresen elküldve!",
+                "submissionError": "Hiba történt az üzenet küldése során."
+            },
+            "copy": "Másolás",
+            "copySuccess": "Másolva a vágólapra!",
+            "copyError": "Hiba a vágólapra másolás során!"
+        }
     }
 }

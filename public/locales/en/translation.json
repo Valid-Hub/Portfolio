@@ -1,5 +1,124 @@
 {
-    "common": {
-        "name": "Common Name"
+    "layouts": {
+        "mainLayout": {
+            "navbar": {
+                "links": {
+                    "home": "Home",
+                    "skills": "About me",
+                    "projects": "Projects",
+                    "contact": "Contact"
+                }
+            }
+        }
+    },
+    "sections": {
+        "hero": {
+            "title": "Jani Patrik",
+            "subtitle": "A Junior Full Stack software developer with a passion for creation who has yet to make a name for himself.",
+            "getInTouch": "Get in touch",
+            "downloadCV": "Download CV",
+            "typewriter": ["I build websites", "I develop backends", "I love new technologies", "Always learning something new"]
+        },
+        "projects": {
+            "title": "Projects & Experience",
+            "paragraphs": [
+                "Throughout my studies and personal initiatives, I have completed several projects where I had the opportunity to work with various frontend and backend technologies. Whether it's websites, admin dashboards, or small games – I always strive to build stable, clean, and well-structured solutions.",
+                "Most projects were team-based, where collaborative planning, task distribution, and regular communication played a crucial role. These experiences helped me improve my teamwork skills and taught me how to effectively manage different perspectives.",
+                "Every challenge was an opportunity to grow – whether it meant learning new technologies or deepening my existing knowledge. I believe that continuous learning and open-mindedness are key to progress, especially in such a fast-evolving field like software development."
+            ],
+            "buttons": {
+                "live": "Live version",
+                "next": "Next",
+                "previous": "Previous"
+            }
+        },
+        "roadmap": {
+            "title": "About me",
+            "paragraphs": [
+                "Hello! I'm a passionate full-stack developer with a love for creating innovative web solutions. My journey in programming started in 2019, and since then I've been constantly learning and growing in this exciting field.",
+                "I specialize in modern web technologies including React, Node.js, and database management. I'm always excited to take on new challenges and collaborate on interesting projects that make a real impact."
+            ],
+            "subtitle": "My Journey",
+            "experiences": [
+                {
+                    "side": "left",
+                    "title": "Started Coding",
+                    "content": [
+                        "I began learning the basics of programming and built my very first application — a simple calculator in C#, following a video tutorial.",
+                        "This small project helped me truly understand how coding works, such as using variables and performing calculations."
+                    ],
+                    "date": "2019"
+                },
+                {
+                    "side": "right",
+                    "title": "First Grade in High School",
+                    "content": [
+                        "I successfully started my first year in high school, where I began learning programming in a more serious way, not just as a hobby.",
+                        "I explored basic structures like classes, loops, functions, and scopes. Most of my work at the time was in Python, which I found quite frustrating — and to this day, I still don’t really enjoy using it. :D"
+                    ],
+                    "date": "2020"
+                },
+                {
+                    "side": "left",
+                    "title": "Vocational Basic Exam",
+                    "content": [
+                        "I passed my Vocational Basic Exam with flying colors, achieving a 99% result.",
+                        "I had studied hard for the exam, but lost 1% on the interactive section due to a few mistakes. Fortunately, I earned a perfect score on the practical section, which made the effort worthwhile."
+                    ],
+                    "date": "2021"
+                },
+                {
+                    "side": "right",
+                    "title": "Attended Prograce",
+                    "content": [
+                        "Prograce is a nationwide coding competition held in Pécs, and I was fortunate to participate in it.",
+                        "It was my first real coding competition, where I had the chance to meet many talented students from other high schools and universities.",
+                        "The challenge was in Scratch, which made it a fun starting point. Although we didn’t make it to the podium, the experience was incredibly valuable."
+                    ],
+                    "date": "2022"
+                },
+                {
+                    "side": "left",
+                    "title": "Returned to Prograce",
+                    "content": [
+                        "Two years later, I returned to Prograce, once again in Pécs, but this time the competition had a much more serious atmosphere.",
+                        "There were around 100 participants, including university students, and the event lasted the entire day.",
+                        "The challenge was in Java — my first time working with the language. Despite the steep learning curve, my team successfully earned fifth place, which was a huge accomplishment."
+                    ],
+                    "date": "2024"
+                },
+                {
+                    "side": "right",
+                    "title": "Pollak Bell",
+                    "content": [
+                        "In my final year of school, I worked on my thesis project with two teammates. We named it Pollak Bell.",
+                        "It was a full-stack web application built with Vue for the frontend and a NestJS backend written in TypeScript. For database management, we used PostgreSQL, running in Docker and Docker Compose as our containerization tools.",
+                        "The application was actually used in our school by over 100 students, making it my first large-scale, production-level project."
+                    ],
+                    "date": "2025"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Let's Connect & Work Together!",
+            "subtitle": "Whether you have a project idea, a question, or just want to chat, feel free to reach out through your preferred method below.",
+            "form": {
+                "title": "Get in Touch",
+                "nameLabel": "Name:",
+                "namePlaceholder": "Your Full Name",
+                "emailLabel": "Email Address:",
+                "emailPlaceholder": "name@example.com",
+                "subjectLabel": "Subject:",
+                "subjectPlaceholder": "Subject of your message",
+                "messageLabel": "Message:",
+                "messagePlaceholder": "Write your message here...",
+                "submitButton": "Send Message",
+                "submissionSuccess": "Your message has been sent successfully!",
+                "submissionError": "An error occurred while sending your message."
+            },
+            "copy": "Copy",
+            "copySuccess": "Copied to clipboard!",
+            "copyError": "An error occurred while copying to clipboard!"
+        }
     }
 }

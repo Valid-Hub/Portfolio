@@ -1,0 +1,365 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #000;
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+    gap: 80px;
+}
+
+.projectsSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    overflow: hidden;
+    padding: 32px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(45deg, #fff, #ccc);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticles 6s ease-in-out infinite;
+}
+
+@keyframes floatParticles {
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1920px;
+    min-width: 100%;
+}
+
+.experienceColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #f3f3f3;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    padding: 2rem;
+    height: 100%;
+    width: 60%;
+}
+
+.experienceColumn > * {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease-out;
+}
+
+.experienceColumn.animate > *:nth-child(1) {
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experienceColumn.animate > *:nth-child(2) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experienceContent p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+    color: #d0d0d0;
+    text-align: justify;
+    letter-spacing: 0.2px;
+    transition: color 0.3s ease;
+}
+
+.experienceContent p:hover {
+    color: #ffffff;
+}
+
+.experienceTitle {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.skillsSection {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+}
+
+.skillTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skillTag {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #eaeaea;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    animation: floatingTag 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatingTag {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+.skillTag:hover {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2), 0 5px 15px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.projectsColumn {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    min-width: 740px;
+}
+
+.projectsColumn > * {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 1s ease-out;
+}
+
+.projectsColumn.animate > *:nth-child(1) {
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.projectsColumn.animate > *:nth-child(2) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carouselContainer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carouselWrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carouselSlide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.projectCard {
+    background-color: #111;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease;
+}
+
+.projectImage {
+    width: 100%;
+    min-height: 275px;
+    max-height: 275px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    object-fit: cover;
+}
+
+.projectContent {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.projectTitle {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.projectDescription {
+    color: #bbb;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.projectLinks {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.linkButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.githubButton {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.liveButton {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.githubButton:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.liveButton:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.carouselControlsWrapper {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.carouselControls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-top: 12px;
+    padding: 0 2rem;
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #111;
+    color: #eee;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navButton:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.prevButton svg,
+.nextButton svg {
+    stroke: #ccc;
+}
+
+@media (max-width: 1680px) {
+    .contentWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carouselContainer {
+        width: 100%;
+    }
+
+    .experienceColumn,
+    .projectsColumn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .projectsColumn {
+        justify-content: center;
+    }
+}

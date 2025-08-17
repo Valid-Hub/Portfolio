@@ -1,0 +1,622 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 60px;
+    gap: 80px;
+    z-index: 10;
+}
+
+.leftContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transition: all 1s ease-out;
+}
+
+.leftContent > * {
+    opacity: 0;
+}
+
+.leftContent.animate > * {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.leftContent.animate > *:nth-child(1) {
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateX(0);
+}
+.leftContent.animate > *:nth-child(2) {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateX(0);
+}
+.leftContent.animate > *:nth-child(3) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.titleSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.title {
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    color: #ffffff;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #cccccc;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 600px;
+}
+
+.typewriterSection {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.typewriterSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.typewriterText {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    color: #ffffff;
+    display: inline-block;
+    min-height: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
+    color: #ffffff;
+}
+
+.ctaSection {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.ctaButton {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+.ctaButton.primary {
+    background: #ffffff;
+    color: #000;
+    border: 2px solid #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+.ctaButton.secondary {
+    text-decoration: none;
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.ctaButton.primary:hover {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.ctaButton.secondary:hover {
+    background: #ffffff;
+    color: #000;
+}
+
+.rightContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.rightContent.animate {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.profileBubble {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bubbleBorder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #fff, #aaa, #ccc, #fff);
+    background-size: 300% 300%;
+    animation: morphBubble 8s ease-in-out infinite, gradientShift 4s ease-in-out infinite;
+    padding: 4px;
+}
+
+.imageContainer {
+    position: relative;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    overflow: hidden;
+    animation: morphBubble 8s ease-in-out infinite;
+    z-index: 2;
+    background: #111;
+}
+
+.profileImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(1.1) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.profileBubble:hover .profileImage {
+    filter: grayscale(0%) brightness(1) contrast(1);
+}
+
+.profileGlow {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.languageFloatingIcon1 {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+}
+
+.languageFloatingIcon2 {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+    animation-delay: 7s;
+}
+
+.languageFloatingIcon3 {
+    position: absolute;
+    bottom: -50px;
+    left: -30px;
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+    animation-delay: 4s;
+}
+
+.languageFloatingIcon4 {
+    position: absolute;
+    bottom: 20px;
+    right: -90px;
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+    animation-delay: 1s;
+}
+
+.languageFloatingIcon1,
+.languageFloatingIcon2,
+.languageFloatingIcon3,
+.languageFloatingIcon4 {
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    animation: floatingIcons 5s ease-in-out infinite alternate;
+}
+
+.languageFloatingIcon1:hover,
+.languageFloatingIcon2:hover,
+.languageFloatingIcon3:hover,
+.languageFloatingIcon4:hover {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: white;
+    color: #000;
+}
+
+@keyframes floatingIcons {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1300px) {
+    .languageFloatingIcon1,
+    .languageFloatingIcon2,
+    .languageFloatingIcon3,
+    .languageFloatingIcon4 {
+        display: none;
+    }
+}
+
+.heroBottom {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    z-index: 20;
+}
+
+.heroBottom > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-in-out;
+}
+
+.heroBottom.animate > *:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.heroBottom.animate > *:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.verticalCapsule {
+    width: 32px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.verticalCapsule:hover {
+    box-shadow: 0 4px 24px rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.capsuleBall {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #fff 60%, #aaa 100%);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    top: 8px;
+    transition: top 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: capsuleBounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes capsuleBounce {
+    0% {
+        top: 8px;
+    }
+    100% {
+        top: 32px;
+    }
+}
+
+.horizontalSwitch {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+}
+
+.switchOption {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 28px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.switchOption:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.switchOption.active {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.18);
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(45deg, #fff, #ccc);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticles 6s ease-in-out infinite;
+}
+
+.backgroundEffects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gradientOrb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #fff, #ccc);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #aaa, #666);
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 7s;
+}
+
+.orb3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #ddd, #999);
+    top: 50%;
+    left: 50%;
+    animation-delay: 14s;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes morphBubble {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    50% {
+        border-radius: 50% 30% 60% 40% / 30% 70% 40% 60%;
+    }
+    75% {
+        border-radius: 40% 70% 30% 60% / 70% 40% 50% 30%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes floatParticles {
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-top: 100px;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .heroBottom {
+        display: none;
+    }
+
+    .profileBubble {
+        width: 350px;
+        height: 350px;
+    }
+    .ctaSection {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0 30px;
+    }
+
+    .profileBubble {
+        width: 280px;
+        height: 280px;
+    }
+}

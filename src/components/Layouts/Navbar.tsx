@@ -1,141 +1,172 @@
-import { useEffect, useState, useRef } from 'react';
-import { Menu, X, User, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../styles/Components/Layouts/navbar.module.css';
-import { useCompatibility } from '../../hooks/useCompability';
+import { useI18n } from '../../contexts/I18nContext';
+import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+    const { t } = useI18n();
+    const { i18n } = useTranslation();
+
+    const [language, setLanguage] = useState<'hu' | 'en'>('hu');
     const [menuOpen, setMenuOpen] = useState(false);
-    const [profileOpen, setProfileOpen] = useState(false);
-    const [showNavbar, setShowNavbar] = useState(true);
-    const lastScrollY = useRef(0);
-    const { width } = useCompatibility(0);
 
     useEffect(() => {
-        if (width > 999) {
-            setMenuOpen(false);
+        const storedLang = localStorage.getItem('i18nextLng') as 'hu' | 'en' | null;
+
+        if (storedLang === 'en' || storedLang === 'hu') {
+            setLanguage(storedLang);
+            i18n.changeLanguage(storedLang);
+        } else {
+            i18n.changeLanguage('hu');
+            setLanguage('hu');
         }
-    }, [width]);
 
-    useEffect(() => {
-        const scrollContainer = document.getElementById('root');
-        if (!scrollContainer) return;
-
-        const handleScroll = () => {
-            const currentScrollY = scrollContainer.scrollTop;
-
-            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-                setShowNavbar(false);
-            } else {
-                setShowNavbar(true);
+        const handleLanguageChange = (lng: string) => {
+            if (lng === 'en' || lng === 'hu') {
+                setLanguage(lng);
             }
-
-            lastScrollY.current = currentScrollY;
         };
 
-        scrollContainer.addEventListener('scroll', handleScroll);
+        i18n.on('languageChanged', handleLanguageChange);
 
         return () => {
-            scrollContainer.removeEventListener('scroll', handleScroll);
+            i18n.off('languageChanged', handleLanguageChange);
         };
-    }, []);
+    }, [i18n]);
+
+    const toggleLanguage = () => {
+        const newLang: 'hu' | 'en' = language === 'hu' ? 'en' : 'hu';
+        setLanguage(newLang);
+        i18n.changeLanguage(newLang);
+        localStorage.setItem('i18nextLng', newLang);
+    };
+
+    const handleScrollTo = (id: string) => {
+        const target = document.querySelector(id);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setMenuOpen(false);
+    };
 
     return (
-        <div className={styles.container}>
-            <AnimatePresence>
-                {!menuOpen && showNavbar && (
-                    <motion.div initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -100, opacity: 0 }} className={styles.topNavbar}>
-                        <span className={styles.logo}>FADEZ.</span>
+        <nav className={styles.navbar}>
+            <div className={styles.content}>
+                <div className={styles.leftSection}>
+                    <span className={styles.brandName}>Portfolio</span>
+                </div>
 
-                        <div className={styles.navItems}>
-                            <a href="#" className={styles.navLink}>
-                                Kezdőlap
+                <div className={styles.rightSection}>
+                    <div className={styles.navLinks}>
+                        <a
+                            href="#home"
+                            className={styles.navLink}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleScrollTo('#home');
+                            }}
+                        >
+                            {t('layouts.mainLayout.navbar.links.home')}
+                        </a>
+                        <a
+                            href="#about"
+                            className={styles.navLink}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleScrollTo('#about');
+                            }}
+                        >
+                            {t('layouts.mainLayout.navbar.links.skills')}
+                        </a>
+                        <a
+                            href="#projects"
+                            className={styles.navLink}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleScrollTo('#projects');
+                            }}
+                        >
+                            {t('layouts.mainLayout.navbar.links.projects')}
+                        </a>
+                        <a
+                            href="#contact"
+                            className={styles.navLink}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleScrollTo('#contact');
+                            }}
+                        >
+                            {t('layouts.mainLayout.navbar.links.contact')}
+                        </a>
+                    </div>
+
+                    <div className={`${styles.mobileMenuWrapper} ${menuOpen ? styles.menuOpen : ''}`}>
+                        <div className={styles.mobileNavLinks}>
+                            <a
+                                href="#home"
+                                className={styles.navLink}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScrollTo('#home');
+                                }}
+                            >
+                                {t('layouts.mainLayout.navbar.links.home')}
                             </a>
-                            <a href="#" className={styles.navLink}>
-                                Időpontfoglalás
+                            <a
+                                href="#about"
+                                className={styles.navLink}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScrollTo('#about');
+                                }}
+                            >
+                                {t('layouts.mainLayout.navbar.links.skills')}
                             </a>
-                            <a href="#" className={styles.navLink}>
-                                Galéria
+                            <a
+                                href="#projects"
+                                className={styles.navLink}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScrollTo('#projects');
+                                }}
+                            >
+                                {t('layouts.mainLayout.navbar.links.projects')}
+                            </a>
+                            <a
+                                href="#contact"
+                                className={styles.navLink}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleScrollTo('#contact');
+                                }}
+                            >
+                                {t('layouts.mainLayout.navbar.links.contact')}
                             </a>
                         </div>
+                    </div>
 
-                        <div className={styles.profileWrapper}>
-                            <button onClick={() => setProfileOpen((prev) => !prev)}>
-                                <User className={styles.profileIcon} />
-                            </button>
+                    <button
+                        onClick={toggleLanguage}
+                        style={{
+                            backgroundImage: `url(/${language === 'hu' ? 'hun_flag.jpeg' : 'eng_flag.png'})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                        }}
+                        className={styles.languageToggle}
+                    ></button>
 
-                            <AnimatePresence>
-                                {profileOpen && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: -10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -10 }}
-                                        className={styles.profileMenu}
-                                    >
-                                        <a href="#" className={styles.profileMenuItem}>
-                                            Beállítások
-                                        </a>
-                                        <a href="#" className={styles.profileMenuItem}>
-                                            Kijelentkezés
-                                        </a>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <AnimatePresence>
-                {!menuOpen && showNavbar && (
-                    <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 100, opacity: 0 }} className={styles.bottomNavbar}>
-                        <span className={styles.logo}>FADEZ.</span>
-
-                        <button onClick={() => setMenuOpen(true)}>
-                            <Menu className={styles.menuIcon} />
-                        </button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <AnimatePresence>
-                {menuOpen && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className={styles.mobileOverlay}>
-                        <div className={styles.mobileMenuItems}>
-                            <a href="#" className={styles.mobileNavLink}>
-                                <span>Kezdőlap</span>
-                                <ChevronRight className={styles.chevronIcon} />
-                            </a>
-                            <a href="#" className={styles.mobileNavLink}>
-                                <span>Időpontfoglalás</span>
-                                <ChevronRight className={styles.chevronIcon} />
-                            </a>
-                            <a href="#" className={styles.mobileNavLink}>
-                                <span>Galéria</span>
-                                <ChevronRight className={styles.chevronIcon} />
-                            </a>
-                        </div>
-
-                        <div className={styles.mobileProfileSection}>
-                            <div className={styles.mobileProfileName}>John Doe</div>
-                            <div className={styles.mobileProfileLinks}>
-                                <a href="#" className={styles.mobileProfileLink}>
-                                    <span>Beállítások</span>
-                                    <ChevronRight className={styles.chevronIcon} />
-                                </a>
-                                <a href="#" className={styles.mobileProfileLink}>
-                                    <span>Kijelentkezés</span>
-                                    <ChevronRight className={styles.chevronIcon} />
-                                </a>
-                            </div>
-                        </div>
-
-                        <button onClick={() => setMenuOpen(false)} className={styles.closeButton}>
-                            <X className={styles.closeIcon} />
-                        </button>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
+                    <button
+                        className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        aria-label="Toggle menu"
+                    >
+                        <div className={styles.bar}></div>
+                        <div className={styles.bar}></div>
+                        <div className={styles.bar}></div>
+                    </button>
+                </div>
+            </div>
+        </nav>
     );
 }

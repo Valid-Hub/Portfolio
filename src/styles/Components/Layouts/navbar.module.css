@@ -1,253 +1,228 @@
-.container {
+.navbar {
+    background-color: #000000;
+    color: #ffffff;
+    width: calc(100% - 10px);
     display: flex;
     justify-content: center;
-    overflow-x: hidden;
-}
-
-.logo {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 3px;
-}
-
-.topNavbar {
-    position: fixed;
-    top: 16px;
-    width: 90%;
-    max-width: 1320px;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 12px 24px;
-    border-radius: 16px;
-    z-index: 50;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    display: none;
-}
-
-.mobileTopBar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    color: white;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 49;
-    display: none;
+    z-index: 1000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.navItems {
+.content {
+    width: 100%;
+    max-width: 1920px;
+    padding: 1rem 2rem;
     display: flex;
-    gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.brandName {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    font-family: 'Inter', sans-serif;
+    background: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.brandName:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2.5rem;
 }
 
 .navLink {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.2s ease;
+    font-weight: 300;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.02em;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    background: transparent;
+    overflow: hidden;
 }
 
 .navLink:hover {
-    color: #d1d5db;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-.profileWrapper {
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+}
+
+.navLink:hover::after {
+    width: 70%;
+}
+
+.languageToggle {
+    width: 3rem;
+    height: 3rem;
+    color: #000000;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-.profileWrapper button {
-    all: unset;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.languageToggle:hover {
+    border: 2px solid rgba(255, 255, 255, 1);
+    color: #000000;
 }
 
-.profileIcon {
-    width: 24px;
-    height: 24px;
-    color: white;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.profileIcon:hover {
-    color: #d1d5db;
-}
-
-.profileMenu {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
-    border-radius: 12px;
-    padding: 8px 0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    z-index: 999;
-}
-
-.profileMenuItem {
-    display: block;
-    padding: 10px 16px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.2s ease;
-}
-
-.profileMenuItem:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.bottomNavbar {
-    position: fixed;
-    bottom: 16px;
-    width: 80%;
-    max-width: 80%;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    border-radius: 16px;
-    z-index: 50;
-    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
+.hamburger {
     display: none;
-}
-
-.bottomNavbar button {
-    all: unset;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menuIcon {
+    flex-direction: column;
+    justify-content: space-between;
     width: 24px;
-    height: 24px;
-    color: white;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.menuIcon:hover {
-    color: #d1d5db;
-}
-
-.mobileOverlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(12px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 100;
-}
-
-.mobileMenuItems {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.mobileMenuItems a,
-.mobileProfileLinks a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.5rem;
-    padding: 12px 16px;
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.mobileMenuItems a:hover,
-.mobileProfileLinks a:hover {
-    color: #d1d5db;
-}
-
-.chevronIcon {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-    color: white;
-    opacity: 0.7;
-}
-
-.mobileNavLink {
-    font-size: 1.25rem;
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.mobileNavLink:hover {
-    color: #d1d5db;
-}
-
-.mobileProfileSection {
-    padding: 24px;
-    margin-bottom: 100px;
-}
-
-.mobileProfileName {
-    font-size: 1.5rem;
-    padding: 12px 16px;
-    color: white;
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
-
-.closeButton {
-    position: absolute;
-    bottom: 32px;
-    right: 32px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
+    z-index: 1001;
 }
 
-.closeIcon {
-    width: 24px;
-    height: 24px;
-    color: white;
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
-@media (min-width: 1000px) {
-    .topNavbar {
+.hamburger.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobileMenuWrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-in-out;
+    z-index: 999;
+}
+
+.menuOpen {
+    max-height: 300px;
+}
+
+.mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+}
+
+.mobileNavLinks a {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.menuOpen .mobileNavLinks a {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.menuOpen .mobileNavLinks a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.menuOpen .mobileNavLinks a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.menuOpen .mobileNavLinks a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.menuOpen .mobileNavLinks a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+@media (max-width: 900px) {
+    .content {
+        padding: 1.5rem 2rem;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger {
         display: flex;
     }
 
-    .bottomNavbar,
-    .mobileTopBar {
-        display: none;
-    }
-}
-
-@media (max-width: 999px) {
-    .topNavbar {
-        display: none;
+    .rightSection {
+        gap: 2rem;
     }
 
-    .bottomNavbar,
-    .mobileTopBar {
-        display: flex;
+    .navLink {
+        font-size: 1.125rem;
+    }
+
+    .leftSection {
+        display: none;
+    }
+
+    .rightSection {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .languageToggle {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
     }
 }

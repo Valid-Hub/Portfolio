@@ -1,9 +1,25 @@
 import styles from '../styles/Pages/home.module.css';
+import ContactSection from '../components/Sections/ContactSection';
+import HeroSection from '../components/Sections/HeroSection';
+import ProjectsSection from '../components/Sections/ProjectsSection';
+import RoadMapSection from '../components/Sections/RoadMapSection';
 
 const Home = () => {
     return (
-        // Main container for the entire page
-        <div className={styles.container}>asd</div>
+        <div className={styles.container}>
+            <div id="home">
+                <HeroSection />
+            </div>
+            <div id="about">
+                <RoadMapSection />
+            </div>
+            <div id="projects">
+                <ProjectsSection />
+            </div>
+            <div id="contact">
+                <ContactSection />
+            </div>
+        </div>
     );
 };
 

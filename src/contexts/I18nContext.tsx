@@ -21,6 +21,7 @@ i18n.use(HttpBackend)
 
 interface I18nContextType {
     t: (key: string) => string;
+    language: string;
     i18n: typeof i18n;
 }
 
@@ -56,5 +57,5 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({ children }) => {
         }
     }, [i18nInstance]);
 
-    return <I18nContext.Provider value={{ t, i18n: i18nInstance }}>{children}</I18nContext.Provider>;
+    return <I18nContext.Provider value={{ t, language: i18nInstance.language, i18n: i18nInstance }}>{children}</I18nContext.Provider>;
 };

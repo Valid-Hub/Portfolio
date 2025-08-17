@@ -1,0 +1,259 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #000;
+}
+
+.sideWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    overflow: hidden;
+    padding: 32px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.lSide {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease-out;
+}
+
+.lSide > * {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 1s ease-out;
+}
+
+.rSide {
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 1s ease-out;
+}
+
+.lSide.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lSide.animate > *:nth-child(1) {
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.lSide.animate > *:nth-child(2) {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.lSide.animate > *:nth-child(3) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+}
+.lSide.animate > *:nth-child(4) {
+    transition-delay: 0.4s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rSide.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1.1rem;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #b0b0b0;
+    max-width: 80%;
+}
+
+.contactInfo p {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.contactInfo p .contactIcon {
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+}
+
+.copyButton {
+    all: unset;
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.copyButton:hover {
+    color: #b6b6b6;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 2rem;
+}
+
+.socialIcons a {
+    color: white;
+    font-size: 3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+    color: #b6b6b6;
+    transform: translateY(-5px);
+}
+
+.iconWithTooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    background: #111;
+    border-color: 1px solid white;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 12px;
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.iconWithTooltip:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.iconWithTooltipCopy {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipCopy {
+    visibility: hidden;
+    opacity: 0;
+    background: #111;
+    border-color: 1px solid white;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 12px;
+    position: absolute;
+    z-index: 10;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.iconWithTooltipCopy:hover .tooltipCopy {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sideWrapper {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .side {
+        padding: 0;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+
+    .contactInfo p {
+        font-size: 1.5rem;
+    }
+
+    .contactInfo p svg {
+        font-size: 1.8rem;
+    }
+
+    .socialIcons a {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .contactInfo p {
+        font-size: 1rem;
+    }
+
+    .contactInfo p svg {
+        font-size: 1.6rem;
+    }
+
+    .rSide {
+        padding: 0px;
+    }
+}

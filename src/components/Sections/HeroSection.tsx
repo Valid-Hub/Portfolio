@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useI18n } from '../../contexts/I18nContext';
 import styles from '../../styles/Components/Sections/hero.section.module.css';
 import { useInView } from '../../hooks/useInView';

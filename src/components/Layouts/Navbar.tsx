@@ -2,7 +2,6 @@ import styles from '../../styles/Components/Layouts/navbar.module.css';
 import { useI18n } from '../../contexts/I18nContext';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
     const { t } = useI18n();

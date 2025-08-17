@@ -2,7 +2,7 @@ import React from 'react';
 import { useI18n } from '../../contexts/I18nContext';
 import styles from '../../styles/Components/Sections/contact.section.module.css';
 import ContactForm from '../Form/ContactForm';
-import { Phone, Mail, MessageSquareText, Facebook, Instagram, Copy, Github } from 'lucide-react';
+import { Mail, Facebook, Instagram, Copy, Github } from 'lucide-react';
 import StarsCanvas from '../Canvas/Stars';
 import { useInView } from '../../hooks/useInView';
 import { usePopup } from '../../contexts/PopupContext';

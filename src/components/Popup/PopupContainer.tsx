@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePopup } from '../../contexts/PopupContext';
 import Popup from './Popup';
 import styles from '../../styles/Components/Popup/popup.container.module.css';

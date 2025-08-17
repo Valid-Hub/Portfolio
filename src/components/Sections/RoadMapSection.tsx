@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useMemo } from 'react';
 import styles from '../../styles/Components/Sections/roadmap.section.module.css';
 import { useInView } from '../../hooks/useInView';
 import { useCompatibility } from '../../hooks/useCompability';
-import { useI18n } from '../../contexts/I18nContext';
+import { useTranslation } from 'react-i18next';
 
 interface Experience {
     side: 'left' | 'right';
@@ -13,7 +13,7 @@ interface Experience {
 
 const RoadMapSection: React.FC = () => {
     const { ref, isVisible } = useInView();
-    const { t, language } = useI18n();
+    const { t } = useTranslation();
     const { ref: aboutRef, isVisible: aboutIsVisible } = useInView();
     const lineRef = useRef<HTMLDivElement>(null);
     const [lineHeight, setLineHeight] = useState(0);

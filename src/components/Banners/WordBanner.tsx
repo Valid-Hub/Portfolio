@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/Components/Banners/word.banner.module.css';
 
 interface WordBannerProps {

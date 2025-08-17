@@ -1,6 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/components/Layouts/footer.module.css';
-import { Facebook, Github, Instagram, Linkedin, Music, Music2, Twitter, Youtube } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 
 interface FooterProps {
@@ -8,7 +6,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = () => {
-    const { ref, isVisible } = useInView();
+    const { ref } = useInView();
 
     return (
         <div className={styles.wrapper} ref={ref}>

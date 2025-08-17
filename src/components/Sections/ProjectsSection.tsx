@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useI18n } from '../../contexts/I18nContext';
 import styles from '../../styles/Components/Sections/projects.section.module.css';
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';

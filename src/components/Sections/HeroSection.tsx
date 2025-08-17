@@ -94,7 +94,7 @@ const HeroSection = () => {
                             <span>{t('sections.hero.getInTouch')}</span>
                         </button>
 
-                        <a href="/cv.pdf" download className={`${styles.ctaButton} ${styles.secondary}`}>
+                        <a href="/Patrik_Jani_CV.pdf" download className={`${styles.ctaButton} ${styles.secondary}`}>
                             <Download />
                             <span>{t('sections.hero.downloadCV')}</span>
                         </a>

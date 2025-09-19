@@ -91,7 +91,7 @@ const ProjectsSection: React.FC = () => {
         setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
     };
 
-    const tags = ['React', 'TypeScript', 'Next.js', 'Node.js', 'CSS/SCSS', 'Git'];
+    const tags = ['HTML', 'CSS/SCSS', 'JavaScript', 'TypeScript', 'Node.js', 'Git', 'React', 'Next.js', 'Express', 'NestJS', 'MySQL', 'PostgreSQL'];
 
     const particles = useMemo(() => {
         return Array.from({ length: 30 }, (_, i) => ({

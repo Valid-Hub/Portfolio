@@ -146,23 +146,13 @@
     padding: 8px 16px;
     background-color: transparent;
     color: #eaeaea;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 500;
     border: 1px solid #ffffff;
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     transform: translateY(0);
-    animation: floatingTag 3s ease-in-out infinite alternate;
-}
-
-@keyframes floatingTag {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-8px);
-    }
 }
 
 .skillTag:hover {
